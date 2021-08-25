@@ -191,6 +191,7 @@ class TransformerLanguageModelConfig(FairseqDataclass):
         default=1, metadata={"help": "shuffle tokens between workers before computing assignment"}
     )
     # options from other parts of the config
+    max_tokens: int = II("task.max_tokens")
     add_bos_token: bool = II("task.add_bos_token")
     tokens_per_sample: int = II("task.tokens_per_sample")
     max_target_positions: Optional[int] = II("task.max_target_positions")
