@@ -21,7 +21,7 @@ The implementation is very simple.
 
 Thats it!
 
-If you'd like to cite our paper, please use:
+#### Citation:
 ```
 @misc{press2021train,
       title={Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation}, 
@@ -33,8 +33,8 @@ If you'd like to cite our paper, please use:
 }
 ```
 
-# WikiText-103
-## Requirements and Installation
+## WikiText-103
+### Requirements and Installation
 
 This repository is a fork of the [Fairseq](https://github.com/pytorch/fairseq) repository and so has the same requirements. 
 
@@ -44,7 +44,7 @@ Once you've installed the dependencies, you can install this repository by runni
 pip install --editable .
 ```
 
-## Preparing the data
+### Preparing the data
 
 To download and preprocess the data, run:
 
@@ -64,7 +64,7 @@ python preprocess.py \
     --workers 20
 ```
 
-## Training/Inference
+### Training and Inference
 
 To train a language model with attention with linear baises (ALiBi), on input sequences with 512 tokens, run:
 ```bash
@@ -98,4 +98,4 @@ For nonoverlapping evaluation of the validation set, run:
 l=1024; fairseq-eval-lm data-bin/wikitext-103/     --path wt103/checkpoint_best.pt  --sample-break-mode none --gen-subset valid   --max-sentences 1 --model-overrides "{'max_tokens':$l, 'tokens_per_sample':$l, 'max_target_positions':$l}"  --tokens-per-sample $l --max-tokens $l  --max-target-positions $l  --context-window 0
 ```
 
-where l is set to the length of input subsequences during validation (l=1024 in the above example). 
+where ```l``` is set to the length of input subsequences during validation (```l```=1024 in the above example). 
