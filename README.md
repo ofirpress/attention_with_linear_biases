@@ -21,6 +21,18 @@ The implementation is very simple.
 
 Thats it!
 
+If you'd like to cite our paper, please use:
+```
+@misc{press2021train,
+      title={Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation}, 
+      author={Ofir Press and Noah A. Smith and Mike Lewis},
+      year={2021},
+      eprint={2108.12409},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
 # WikiText-103
 ## Requirements and Installation
 
