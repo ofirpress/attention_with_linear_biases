@@ -55,7 +55,7 @@ cd ../..
 
 
 TEXT=examples/language_model/wikitext-103
-python preprocess.py \
+python fairseq_cli/preprocess.py \
     --only-source \
     --trainpref $TEXT/wiki.train.tokens \
     --validpref $TEXT/wiki.valid.tokens \
