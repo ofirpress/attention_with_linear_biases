@@ -77,16 +77,16 @@ To train the model with inputs of 3072 tokens, the --update-freq parameter must 
 
 #### Saved Checkpoints
 If you'd like to download our trained models on WikiText-103, they are available here:
-| Input Length      | Link |
-| ----------- | ----------- |
-| 64   | https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L64.pt        |
-| 128   | https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L128.pt        |
-| 256   | https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L256.pt        |
-| 512   | https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L512.pt        |
-| 1024   | https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L1024.pt        |
-| 1536   | https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L1536.pt        |
-| 2048   | https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L2048.pt        |
-| 3072   | https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L3072.pt        |
+| Input Length      | Model | Log |
+| ----------- | ----------- | ----------- |
+| 64     | [⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L64.pt)          |[⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L64.log)          |
+| 128    | [⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L128.pt)         |[⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L128.log)         |
+| 256    | [⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L256.pt)         |[⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L256.log)         |
+| 512    | [⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L512.pt)         |[⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L512.log)         |
+| 1024   | [⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L1024.pt)        |[⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L1024.log)        |
+| 1536   | [⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L1536.pt)        |[⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L1536.log)        |
+| 2048   | [⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L2048.pt)        |[⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L2048.log)        |
+| 3072   | [⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L3072.pt)        |[⬇️ ](https://dl.fbaipublicfiles.com/train_short_test_long/wt103/alibi_wt103_L3072.log)        |
 
 
 Rename the file you downloaded to ```checkpoint_best.pt``` if you'd like to follow the directions below.
