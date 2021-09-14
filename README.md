@@ -73,7 +73,7 @@ python train.py --task language_modeling data-bin/wikitext-103 --save-dir wt103/
 
 For input sequences larger than 512 (and up to 2048) tokens, just change the --tokens-per-sample.
 
-To train the model with inputs of 3072 tokens, the --update-freq parameter must be changed to 3 and the --max-tokens parameter must be reduced to 3072. 
+To train the model with inputs of length 3072, the --update-freq parameter must be changed to 3 and the --max-tokens parameter must be reduced to 3072 (and --tokens-per-sample must also be set to 3072). 
 
 **If you run out of memory while training:** set --max-tokens to be 0.5 times what it was perviously and set --update-freq to be 2 times what it was previously. This results in a batched computation that is mathematically equivalent to the original command but requires less memory. If that doesn't work, set --max-tokens to be 0.25 times what it was previously and set the --update-freq to be 4 times what it was previously, and so on... 
 
