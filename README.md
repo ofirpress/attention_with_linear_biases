@@ -95,9 +95,16 @@ Rename the file you downloaded to ```checkpoint_best.pt``` if you'd like to foll
 
 #### Inference
 
-For nonoverlapping evaluation of the validation set, run:
+For nonoverlapping evaluation on the validation set, run:
 ```bash
 l=1024; fairseq-eval-lm data-bin/wikitext-103/     --path wt103/checkpoint_best.pt  --sample-break-mode none --gen-subset valid   --max-sentences 1 --model-overrides "{'max_tokens':$l, 'tokens_per_sample':$l, 'max_target_positions':$l}"  --tokens-per-sample $l --max-tokens $l  --max-target-positions $l  --context-window 0
 ```
 
 where ```l``` is set to the length of input subsequences during validation (```l```=1024 in the above example). 
+
+For sliding window evaluation on the validation set, run:
+
+```bash
+l=1024; fairseq-eval-lm data-bin/wikitext-103/     --path wt103/checkpoint_best.pt  --sample-break-mode none --gen-subset valid   --max-sentences 1 --model-overrides "{'max_tokens':$l, 'tokens_per_sample':$l, 'max_target_positions':$l}"  --tokens-per-sample $l --max-tokens $l  --max-target-positions $l  --context-window $((l-1)) 
+```
+(We just modify the --context-window argument here to be l-1, this means that we will slide the evaluation window by 1 token at every forward pass). 
