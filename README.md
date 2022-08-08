@@ -2,6 +2,13 @@
 
 This repository contains the ALiBi code and models for our ICLR 2022 paper Train Short, Test Long. This file explains how to run our experiments on the WikiText-103 dataset. Read the paper [here](https://ofir.io/train_short_test_long.pdf). 
 
+```diff
++ -----------
++ NEW STUFF: 
++ -----------
+```
+1. If you'd like to apply ALiBi to a bidirectional transformer (such as an encoder) model, you could use one of the methods mentioned [here](https://github.com/ofirpress/attention_with_linear_biases/issues/5). 
+2. BigScience's BLOOM model uses ALiBi by default! For more information or to download the model, go [here](https://huggingface.co/bigscience/bloom).
 
 <p align="center">
   <img src=".github/ALiBi.jpeg" width="50%" height="50%">
