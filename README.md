@@ -9,6 +9,8 @@ This repository contains the ALiBi code and models for our ICLR 2022 paper Train
 ```
 1. If you'd like to apply ALiBi to a bidirectional transformer (such as an encoder) model, you could use one of the methods mentioned [here](https://github.com/ofirpress/attention_with_linear_biases/issues/5). 
 2. BigScience's BLOOM model uses ALiBi by default! For more information or to download the model, go [here](https://huggingface.co/bigscience/bloom).
+3. There's a new FAQ [below](https://github.com/ofirpress/attention_with_linear_biases/#faq) that answers questions regarding comparisons with TransformerXL and why I think ALiBi works well. 
+
 
 <p align="center">
   <img src=".github/ALiBi.jpeg" width="50%" height="50%">
@@ -27,6 +29,16 @@ The implementation is very simple.
 
 
 Thats it!
+## FAQ:
+#### 
+#### Why do you think ALiBi works?
+I'm not quite sure, but here are my thoughts- I think that using position embeddings (learned, sinusoidal or rotary) is not optimal. I think it leads to the LM 'overfitting' to those position embeddings, and not really understanding the concept of positionality. I have more details about this in [this twitter thread](https://twitter.com/OfirPress/status/1435690039925567489). 
+
+#### How does ALiBi compare to the positional embedding method from TransformerXL?
+Good question! Although I don't think it has ever been thoroughly tested, the TransformerXL positioning method might also enable extrapolation. In a previous paper ([Shortformer](https://ofir.io/shortformer.pdf), Table 5) we've shown that that method leads to the attention mechanism being more than two times *slower* than the unmodified attention method. It also requires doubling the amount of memory that the attention sublayer uses. 
+ALiBi runs just as quickly as unmodified attention and uses at most 100MB of extra memory.
+
+<hr>
 
 #### Citation:
 ```
@@ -114,4 +126,4 @@ For sliding window evaluation on the validation set, run:
 ```bash
 l=1024; fairseq-eval-lm data-bin/wikitext-103/     --path wt103/checkpoint_best.pt  --sample-break-mode none --gen-subset valid   --max-sentences 1 --model-overrides "{'max_tokens':$l, 'tokens_per_sample':$l, 'max_target_positions':$l}"  --tokens-per-sample $l --max-tokens $l  --max-target-positions $l  --context-window $((l-1)) 
 ```
-(We just modify the --context-window argument here to be l-1, this means that we will slide the evaluation window by 1 token at every forward pass). 
+(We just modify the --context-window argument here to be l-1, this means that we will slide the evaluation window by 1 token at every forward pass).
