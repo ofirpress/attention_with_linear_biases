@@ -38,6 +38,9 @@ I'm not quite sure, but here are my thoughts- I think that using position embedd
 Good question! Although I don't think it has ever been thoroughly tested, the TransformerXL positioning method might also enable extrapolation. In a previous paper ([Shortformer](https://ofir.io/shortformer.pdf), Table 5) we've shown that that method leads to the attention mechanism being more than two times *slower* than the unmodified attention method. It also requires doubling the amount of memory that the attention sublayer uses. 
 ALiBi runs just as quickly as unmodified attention and uses at most 100MB of extra memory.
 
+#### How can I apply ALiBi to bidirectional models like an encoder-only model (like BERT) or an encoder-decoder model (like T5)?
+See [this](https://github.com/ofirpress/attention_with_linear_biases/issues/5).
+
 <hr>
 
 #### Citation:
