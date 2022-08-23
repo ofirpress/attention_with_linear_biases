@@ -41,6 +41,11 @@ ALiBi runs just as quickly as unmodified attention and uses at most 100MB of ext
 #### How can I apply ALiBi to bidirectional models like an encoder-only model (like BERT) or an encoder-decoder model (like T5)?
 See [this](https://github.com/ofirpress/attention_with_linear_biases/issues/5).
 
+#### If I want to extrapolate to longer sequences, can't I just apply a sliding window mask to a sinusoidal/learned position embedding model?
+Nope, that won't work (I've tried). With learned position embeddings you won't even have a position embedding for any token beyond the training context length (so if you trained on 1k tokens you won't have a position embedding for token 1001). With sinusoidal position embedding, the model will become unstable once you start feeding in position embeddings that it did not observe during training. I talk a bit more about this in my video lecture [here](https://www.youtube.com/watch?v=Pp61ShI9VGc).
+
+
+
 <hr>
 
 #### Citation:
