@@ -1,6 +1,10 @@
 # Train Short, Test Long: Attention with Linear Biases (ALiBi) Enables Input Length Extrapolation 
 
-This repository contains the ALiBi code and models for our ICLR 2022 paper Train Short, Test Long. This file explains how to run our experiments on the WikiText-103 dataset. Read the paper [here](https://ofir.io/train_short_test_long.pdf). 
+This repository contains the ALiBi code and models for our ICLR 2022 paper Train Short, Test Long. This file explains how to run our experiments on the WikiText-103 dataset. 
+
+Paper: [here](https://ofir.io/train_short_test_long.pdf)
+
+Video: [here](https://www.youtube.com/watch?v=Pp61ShI9VGc)
 
 ```diff
 + -----------
