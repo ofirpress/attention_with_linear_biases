@@ -11,6 +11,7 @@ Video: [here](https://www.youtube.com/watch?v=Pp61ShI9VGc)
 + NEW STUFF: 
 + -----------
 ```
+0. There's a [new paper](https://arxiv.org/abs/2310.13017) showing that the position interpolation trick works with ALiBi (October 2023). 
 1. If you'd like to apply ALiBi to a bidirectional transformer (such as an encoder) model, you could use one of the methods mentioned [here](https://github.com/ofirpress/attention_with_linear_biases/issues/5). 
 2. BigScience's BLOOM model uses ALiBi by default! For more information or to download the model, go [here](https://huggingface.co/bigscience/bloom).
 3. There's a new FAQ [below](https://github.com/ofirpress/attention_with_linear_biases/#faq) that answers questions regarding comparisons with TransformerXL and why I think ALiBi works well. 
